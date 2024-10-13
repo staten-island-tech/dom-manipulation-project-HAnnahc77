@@ -1,15 +1,26 @@
-const form = document.querySelectorAll("form");
-const buttons = document.querySelectorAll("button");
+const DOMSelectors = {
+button: document.getElementById("button"),
+form: document.getElementById("form"),
+container: document.querySelector(".container"),
+}
+
+DOMSelectors.button.addEventListener("click", function(event) {
+  console.log(event.target.parentElement);
+});
+
+DOMSelectors.form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  console.log(document.querySelector("input").value)
+});
 
 DOMSelectors.container.insertAdjacentHTML(
   "beforeend",
-  `<h1 id = card.header> Title </h1>
-  <img src="cover.jfif" alt="Image">
-  <h2> Description </h2>`
+  `<h1 id=card.header></h1>
+  <img src="" alt="Image">
+  <h2></h2>`
 );
 
-buttons.forEach((button) =>
-  button.addEventListener("click", function (event) {
-    console.log(event.target.textContent);
-  })
-);
+
+if (cards.length > 0) {
+  cardContainer.classList.remove('hidden');
+}

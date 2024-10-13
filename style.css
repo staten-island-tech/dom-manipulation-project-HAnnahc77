@@ -12,25 +12,34 @@ body {
     background: #d1b985;
 }
 
+.container {
+    text-align: center;
+}
+
 .spacing {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    
+
 }
-.card {
-    text-align:center;
+
+.hidden {
+    display: none;
+}
+
+#card {
     background-color: white;
     border-color: black;
-    width:400px;
+    width: 400px;
     padding: 5px;
     margin-bottom: 10px;
 }
 
-.form {
+
+#form {
     padding-bottom: 15px;
-    text-align: center;
 }
+
 h1 {
     font-size: 65px;
 }
@@ -44,10 +53,14 @@ button {
 
 }
 
+button:hover {
+    transform: scale(1.1);
+}
+
 h2 {
-    font-size: 17px;
+    font-size: 20px;
 }
 
 img {
-  object-fit: cover; 
+    object-fit: cover;
 }
