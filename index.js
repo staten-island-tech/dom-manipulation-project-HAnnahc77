@@ -10,17 +10,19 @@ DOMSelectors.button.addEventListener("click", function(event) {
 
 DOMSelectors.form.addEventListener("submit", function(event) {
   event.preventDefault();
-  console.log(document.querySelector("input").value)
+  console.log(document.querySelector("input[name='albumName']").value);
+  console.log(document.querySelector("input[name='albumImageID']").value);
+  console.log(document.querySelector("input[name='albumDescription']").value);
 });
 
 DOMSelectors.container.insertAdjacentHTML(
   "beforeend",
-  `<h1 id=card.header></h1>
-  <img src="" alt="Image">
-  <h2></h2>`
+  `<h1 id="card-header">${albumName}</h1>
+  <img src="https://example.com/${albumImageID}" alt="Album Image">
+  <h2>${albumDescription}</h2>`
 );
 
 
 if (cards.length > 0) {
-  cardContainer.classList.remove('hidden');
+  container.classList.remove('hidden');
 }
