@@ -1,28 +1,34 @@
 const DOMSelectors = {
-button: document.getElementById("button"),
-form: document.getElementById("form"),
-container: document.querySelector(".container"),
-}
+  button: document.getElementById("button"),
+  form: document.getElementById("form"),
+  container: document.querySelector(".container"),
+  card: document.querySelector(".card"),
+};
 
-DOMSelectors.button.addEventListener("click", function(event) {
-  console.log(event.target.parentElement);
-});
-
-DOMSelectors.form.addEventListener("submit", function(event) {
+DOMSelectors.form.addEventListener("submit", function (event) {
+  const albumName = document.querySelector("input[name='albumName']").value;
+  const albumImageID = document.querySelector(
+    "input[name='albumImageID']"
+  ).value;
+  const albumDescription = document.querySelector(
+    "input[name='albumDescription']"
+  ).value;
   event.preventDefault();
-  console.log(document.querySelector("input[name='albumName']").value);
-  console.log(document.querySelector("input[name='albumImageID']").value);
-  console.log(document.querySelector("input[name='albumDescription']").value);
+  console.log(albumName);
+  console.log(albumImageID);
+  console.log(albumDescription);
 });
 
 DOMSelectors.container.insertAdjacentHTML(
   "beforeend",
   `<h1 id="card-header">${albumName}</h1>
-  <img src="https://example.com/${albumImageID}" alt="Album Image">
+  <img src="${albumImageID}" alt="Album Image">
   <h2>${albumDescription}</h2>`
 );
+DOMSelectors.button.addEventListener("click", function (event) {
+  console.log(event.target.parentElement);
+});
 
-
-if (cards.length > 0) {
-  container.classList.remove('hidden');
+if (card.length > 0) {
+  DOMSelectors.container.classList.remove("hidden");
 }
