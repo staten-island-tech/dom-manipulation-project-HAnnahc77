@@ -1,9 +1,18 @@
 const DOMSelectors = {
   button: document.getElementById("button"),
   form: document.getElementById("form"),
+  inputs: document.querySelector(".input"),
   container: document.querySelector(".container"),
   card: document.querySelector(".card"),
 };
+
+DOMSelectors.button.addEventListener("click", function () {});
+
+function input() {
+  DOMSelectors.inputs.forEach((input) => {
+    console.log(input);
+  });
+}
 
 DOMSelectors.form.addEventListener("submit", function (event) {
   const albumName = document.querySelector("input[name='albumName']").value;
@@ -25,9 +34,6 @@ DOMSelectors.container.insertAdjacentHTML(
   <img src="${albumImageID}" alt="Album Image">
   <h2>${albumDescription}</h2>`
 );
-DOMSelectors.button.addEventListener("click", function (event) {
-  console.log(event.target.parentElement);
-});
 
 if (card.length > 0) {
   DOMSelectors.container.classList.remove("hidden");
