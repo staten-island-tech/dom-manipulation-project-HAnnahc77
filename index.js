@@ -1,7 +1,7 @@
 const DOMSelectors = {
   button: document.getElementById("button"),
   form: document.getElementById("form"),
-  inputs: document.querySelector(".input"),
+  inputs: document.querySelectorAll(".input"),
   container: document.querySelector(".container"),
   card: document.querySelector(".card"),
 };
@@ -13,15 +13,19 @@ function input() {
     console.log(input);
   });
 }
+let albumName = {
+  name: document.querySelector("input[name='albumName']").value,
+};
+
+let albumImageID = {
+  name: document.querySelector("input[name='albumImageID']").value,
+};
+
+let albumDescription = {
+  name: document.querySelector("input[name='albumDescription']").value,
+};
 
 DOMSelectors.form.addEventListener("submit", function (event) {
-  const albumName = document.querySelector("input[name='albumName']").value;
-  const albumImageID = document.querySelector(
-    "input[name='albumImageID']"
-  ).value;
-  const albumDescription = document.querySelector(
-    "input[name='albumDescription']"
-  ).value;
   event.preventDefault();
   console.log(albumName);
   console.log(albumImageID);
@@ -34,7 +38,3 @@ DOMSelectors.container.insertAdjacentHTML(
   <img src="${albumImageID}" alt="Album Image">
   <h2>${albumDescription}</h2>`
 );
-
-if (card.length > 0) {
-  DOMSelectors.container.classList.remove("hidden");
-}
