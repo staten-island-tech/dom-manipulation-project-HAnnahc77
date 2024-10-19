@@ -1,40 +1,21 @@
 const DOMSelectors = {
   button: document.getElementById("button"),
-  form: document.getElementById("form"),
-  inputs: document.querySelectorAll(".input"),
-  container: document.querySelector(".container"),
   card: document.querySelector(".card"),
-};
+ inputname: document.getElementById("inputname"),
+ inputimg: document.getElementById("inputimg"),
+ inputdesc: document.getElementById("inputdesc"),
+ };
 
-DOMSelectors.button.addEventListener("click", function () {});
-
-function input() {
-  DOMSelectors.inputs.forEach((input) => {
-    console.log(input);
-  });
-}
-let albumName = {
-  name: document.querySelector("input[name='albumName']").value,
-};
-
-let albumImageID = {
-  name: document.querySelector("input[name='albumImageID']").value,
-};
-
-let albumDescription = {
-  name: document.querySelector("input[name='albumDescription']").value,
-};
-
-DOMSelectors.form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  console.log(albumName);
-  console.log(albumImageID);
-  console.log(albumDescription);
-});
-
-DOMSelectors.container.insertAdjacentHTML(
-  "beforeend",
-  `<h1 id="card-header">${albumName}</h1>
-  <img src="${albumImageID}" alt="Album Image">
-  <h2>${albumDescription}</h2>`
-);
+ DOMSelectors.button.addEventListener("click", function (event) {
+DOMSelectors.card.style.padding = "5px";
+DOMSelectors.card.style.marginBottom = "10px";
+DOMSelectors.card.style.borderWidth="3px";
+DOMSelectors.card.style.borderStyle="solid";
+event.preventDefault();
+let input1 = DOMSelectors.inputname.value;
+let input2 = DOMSelectors.inputimg.value;
+let input3 = DOMSelectors.inputdesc.value;
+DOMSelectors.card.insertAdjacentHTML("beforeend",
+  `<h1 id="card-header">${input1}</h1>
+  <img src="${input2}" alt="Album Image">
+  <h2>${input3}</h2>);`)});

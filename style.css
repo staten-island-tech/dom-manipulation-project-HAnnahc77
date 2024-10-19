@@ -23,16 +23,11 @@ body {
 
 }
 
-.hidden {
-    display: none;
-}
 
-#card {
+.card {
     background-color: white;
-    border-color: black;
     width: 400px;
-    padding: 5px;
-    margin-bottom: 10px;
+    border-color: black;
 }
 
 
