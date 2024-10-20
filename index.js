@@ -1,6 +1,8 @@
 const DOMSelectors = {
   button: document.getElementById("button"),
   spacing: document.querySelector(".spacing"),
+  removebutton: document.querySelector(".removebutton"),
+  container: document.querySelector(".container"),
   inputname: document.getElementById("inputname"),
   inputimg: document.getElementById("inputimg"),
   inputdesc: document.getElementById("inputdesc"),
@@ -13,28 +15,27 @@ DOMSelectors.button.addEventListener("click", function (event) {
   let input2 = DOMSelectors.inputimg.value;
   let input3 = DOMSelectors.inputdesc.value;
 
-    const cardHTML = `
-      <div class="card" style="padding: 5px; margin-bottom: 10px; border-width: 3px; border-style: solid; border-color: black; background-color: white; width: 400px;">
+    const cardHTML = 
+    ` <div class="card">
         <h1 id="card-header">${input1}</h1>
-        <img src="${input2}" alt="Album Image" style="width: 100%; height: auto;">
+        <img src="${input2}" alt="Album Image">
         <h2>${input3}</h2>
-        <button class="removebutton">Remove</button> <!-- Remove button -->
-      </div>
-    `;
+        <button class="removebutton">Remove</button>
+      </div>`;
 
     if (input1 && input2 && input3) {
-    DOMSelectors.spacing.insertAdjacentHTML("afterbegin", cardHTML);
+      DOMSelectors.spacing.insertAdjacentHTML("afterbegin", cardHTML);
+      DOMSelectors.container.classList.remove('hidden');
     }
 
     DOMSelectors.inputname.value = '';
     DOMSelectors.inputimg.value = '';
     DOMSelectors.inputdesc.value = '';
+});
 
-
-    const removeButtons = document.querySelectorAll(".removebutton");
-    const latestRemoveButton = removeButtons[removeButtons.length - 1]; 
-    latestRemoveButton.addEventListener("click", function () {
-      const cardToRemove = latestRemoveButton.parentElement; 
-      cardToRemove.remove();
-    });
+DOMSelectors.spacing.addEventListener("click", function (event) {
+  if (event.target.classList.contains("removebutton")) {
+    const cardToRemove = event.target.parentElement; 
+    cardToRemove.remove();
+  }
 });

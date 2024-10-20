@@ -23,6 +23,20 @@ body {
 
 }
 
+.hidden {
+    display: none;
+}
+
+.card {
+    padding: 5px;
+    margin-bottom: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    width: 400px;
+}
+
 #form {
     padding-bottom: 15px;
 }
@@ -37,7 +51,6 @@ button {
     border-color: black;
     padding: 5px;
     margin-top: 5px;
-
 }
 
 button:hover {
@@ -50,4 +63,6 @@ h2 {
 
 img {
     object-fit: cover;
+    width: 100%;
+    height: auto;
 }
